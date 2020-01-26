@@ -1,0 +1,1365 @@
+TimeQuest Timing Analyzer report for simon
+Wed May 17 16:01:38 2017
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clk'
+ 24. Fast Model Hold: 'clk'
+ 25. Fast Model Minimum Pulse Width: 'clk'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; simon                                                             ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 112.5 MHz ; 112.5 MHz       ; clk        ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -7.889 ; -3195.344     ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.445 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.631 ; -855.809              ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                                                              ;
++--------+-----------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                 ; To Node                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -7.889 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|state[1]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 8.927      ;
+; -7.888 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|state[0]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 8.926      ;
+; -7.860 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.898      ;
+; -7.860 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.898      ;
+; -7.860 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.898      ;
+; -7.860 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.898      ;
+; -7.860 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.898      ;
+; -7.860 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.898      ;
+; -7.860 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.898      ;
+; -7.860 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.898      ;
+; -7.844 ; core:core_inst|memory[25][1]                              ; core:core_inst|state[1]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 8.882      ;
+; -7.843 ; core:core_inst|memory[25][1]                              ; core:core_inst|state[0]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 8.881      ;
+; -7.821 ; core:core_inst|memory[25][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.859      ;
+; -7.821 ; core:core_inst|memory[25][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.859      ;
+; -7.821 ; core:core_inst|memory[25][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.859      ;
+; -7.821 ; core:core_inst|memory[25][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.859      ;
+; -7.821 ; core:core_inst|memory[25][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.859      ;
+; -7.821 ; core:core_inst|memory[25][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.859      ;
+; -7.821 ; core:core_inst|memory[25][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.859      ;
+; -7.821 ; core:core_inst|memory[25][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.859      ;
+; -7.782 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|state[1]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 8.820      ;
+; -7.781 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|state[0]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 8.819      ;
+; -7.775 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|state[1]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 8.813      ;
+; -7.774 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|state[0]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 8.812      ;
+; -7.753 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.791      ;
+; -7.753 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.791      ;
+; -7.753 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.791      ;
+; -7.753 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.791      ;
+; -7.753 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.791      ;
+; -7.753 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.791      ;
+; -7.753 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.791      ;
+; -7.753 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.791      ;
+; -7.752 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.790      ;
+; -7.752 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.790      ;
+; -7.752 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.790      ;
+; -7.752 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.790      ;
+; -7.752 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.790      ;
+; -7.752 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.790      ;
+; -7.752 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.790      ;
+; -7.752 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.790      ;
+; -7.735 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|state[1]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 8.773      ;
+; -7.734 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|state[0]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 8.772      ;
+; -7.719 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|state[1]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 8.757      ;
+; -7.718 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|state[0]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 8.756      ;
+; -7.706 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.744      ;
+; -7.706 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.744      ;
+; -7.706 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.744      ;
+; -7.706 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.744      ;
+; -7.706 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.744      ;
+; -7.706 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.744      ;
+; -7.706 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.744      ;
+; -7.706 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.744      ;
+; -7.695 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.733      ;
+; -7.695 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.733      ;
+; -7.695 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.733      ;
+; -7.695 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.733      ;
+; -7.695 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.733      ;
+; -7.695 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.733      ;
+; -7.695 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.733      ;
+; -7.695 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 8.733      ;
+; -7.684 ; core:core_inst|memory[19][1]                              ; core:core_inst|state[1]                                   ; clk          ; clk         ; 1.000        ; 0.011      ; 8.733      ;
+; -7.683 ; core:core_inst|memory[19][1]                              ; core:core_inst|state[0]                                   ; clk          ; clk         ; 1.000        ; 0.011      ; 8.732      ;
+; -7.673 ; core:core_inst|memory[24][1]                              ; core:core_inst|state[1]                                   ; clk          ; clk         ; 1.000        ; 0.008      ; 8.719      ;
+; -7.672 ; core:core_inst|memory[24][1]                              ; core:core_inst|state[0]                                   ; clk          ; clk         ; 1.000        ; 0.008      ; 8.718      ;
+; -7.667 ; core:core_inst|memory[130][0]                             ; core:core_inst|state[1]                                   ; clk          ; clk         ; 1.000        ; -0.001     ; 8.704      ;
+; -7.666 ; core:core_inst|memory[130][0]                             ; core:core_inst|state[0]                                   ; clk          ; clk         ; 1.000        ; -0.001     ; 8.703      ;
+; -7.661 ; core:core_inst|memory[19][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.011      ; 8.710      ;
+; -7.661 ; core:core_inst|memory[19][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.011      ; 8.710      ;
+; -7.661 ; core:core_inst|memory[19][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.011      ; 8.710      ;
+; -7.661 ; core:core_inst|memory[19][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.011      ; 8.710      ;
+; -7.661 ; core:core_inst|memory[19][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.011      ; 8.710      ;
+; -7.661 ; core:core_inst|memory[19][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.011      ; 8.710      ;
+; -7.661 ; core:core_inst|memory[19][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.011      ; 8.710      ;
+; -7.661 ; core:core_inst|memory[19][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.011      ; 8.710      ;
+; -7.655 ; core:core_inst|memory[139][0]                             ; core:core_inst|state[1]                                   ; clk          ; clk         ; 1.000        ; 0.012      ; 8.705      ;
+; -7.654 ; core:core_inst|memory[139][0]                             ; core:core_inst|state[0]                                   ; clk          ; clk         ; 1.000        ; 0.012      ; 8.704      ;
+; -7.650 ; core:core_inst|memory[24][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.008      ; 8.696      ;
+; -7.650 ; core:core_inst|memory[24][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.008      ; 8.696      ;
+; -7.650 ; core:core_inst|memory[24][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.008      ; 8.696      ;
+; -7.650 ; core:core_inst|memory[24][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.008      ; 8.696      ;
+; -7.650 ; core:core_inst|memory[24][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.008      ; 8.696      ;
+; -7.650 ; core:core_inst|memory[24][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.008      ; 8.696      ;
+; -7.650 ; core:core_inst|memory[24][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.008      ; 8.696      ;
+; -7.650 ; core:core_inst|memory[24][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.008      ; 8.696      ;
+; -7.638 ; core:core_inst|memory[130][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; -0.001     ; 8.675      ;
+; -7.638 ; core:core_inst|memory[130][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; -0.001     ; 8.675      ;
+; -7.638 ; core:core_inst|memory[130][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; -0.001     ; 8.675      ;
+; -7.638 ; core:core_inst|memory[130][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; -0.001     ; 8.675      ;
+; -7.638 ; core:core_inst|memory[130][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; -0.001     ; 8.675      ;
+; -7.638 ; core:core_inst|memory[130][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; -0.001     ; 8.675      ;
+; -7.638 ; core:core_inst|memory[130][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; -0.001     ; 8.675      ;
+; -7.638 ; core:core_inst|memory[130][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; -0.001     ; 8.675      ;
+; -7.626 ; core:core_inst|memory[139][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.012      ; 8.676      ;
+; -7.626 ; core:core_inst|memory[139][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.012      ; 8.676      ;
+; -7.626 ; core:core_inst|memory[139][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.012      ; 8.676      ;
+; -7.626 ; core:core_inst|memory[139][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.012      ; 8.676      ;
+; -7.626 ; core:core_inst|memory[139][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.012      ; 8.676      ;
+; -7.626 ; core:core_inst|memory[139][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.012      ; 8.676      ;
+; -7.626 ; core:core_inst|memory[139][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.012      ; 8.676      ;
+; -7.626 ; core:core_inst|memory[139][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.012      ; 8.676      ;
++--------+-----------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                                                        ;
++-------+----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                      ; To Node                                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; core:core_inst|counter:rand_color_count_inst|cnt_val[0]        ; core:core_inst|counter:rand_color_count_inst|cnt_val[0]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[0]                          ; ps2:ps2_inst|counter:count|cnt_val[0]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[1]                          ; ps2:ps2_inst|counter:count|cnt_val[1]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[2]                          ; ps2:ps2_inst|counter:count|cnt_val[2]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[3]                          ; ps2:ps2_inst|counter:count|cnt_val[3]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[4]                          ; ps2:ps2_inst|counter:count|cnt_val[4]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[5]                          ; ps2:ps2_inst|counter:count|cnt_val[5]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[6]                          ; ps2:ps2_inst|counter:count|cnt_val[6]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[7]                          ; ps2:ps2_inst|counter:count|cnt_val[7]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[8]                          ; ps2:ps2_inst|counter:count|cnt_val[8]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[9]                          ; ps2:ps2_inst|counter:count|cnt_val[9]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[10]                         ; ps2:ps2_inst|counter:count|cnt_val[10]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[11]                         ; ps2:ps2_inst|counter:count|cnt_val[11]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[12]                         ; ps2:ps2_inst|counter:count|cnt_val[12]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[13]                         ; ps2:ps2_inst|counter:count|cnt_val[13]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[14]                         ; ps2:ps2_inst|counter:count|cnt_val[14]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[15]                         ; ps2:ps2_inst|counter:count|cnt_val[15]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[16]                         ; ps2:ps2_inst|counter:count|cnt_val[16]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[17]                         ; ps2:ps2_inst|counter:count|cnt_val[17]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[18]                         ; ps2:ps2_inst|counter:count|cnt_val[18]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[19]                         ; ps2:ps2_inst|counter:count|cnt_val[19]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[20]                         ; ps2:ps2_inst|counter:count|cnt_val[20]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[21]                         ; ps2:ps2_inst|counter:count|cnt_val[21]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[22]                         ; ps2:ps2_inst|counter:count|cnt_val[22]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[23]                         ; ps2:ps2_inst|counter:count|cnt_val[23]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[24]                         ; ps2:ps2_inst|counter:count|cnt_val[24]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[25]                         ; ps2:ps2_inst|counter:count|cnt_val[25]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[26]                         ; ps2:ps2_inst|counter:count|cnt_val[26]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[27]                         ; ps2:ps2_inst|counter:count|cnt_val[27]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[28]                         ; ps2:ps2_inst|counter:count|cnt_val[28]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[29]                         ; ps2:ps2_inst|counter:count|cnt_val[29]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[30]                         ; ps2:ps2_inst|counter:count|cnt_val[30]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|counter:count|cnt_val[31]                         ; ps2:ps2_inst|counter:count|cnt_val[31]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|key_seq3[0]                                       ; ps2:ps2_inst|key_seq3[0]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|key_seq3[1]                                       ; ps2:ps2_inst|key_seq3[1]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; ps2:ps2_inst|btn_pulse                                         ; ps2:ps2_inst|btn_pulse                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|state[0]                                        ; core:core_inst|state[0]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|blink_en                                        ; core:core_inst|blink_en                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:rand_color_count_inst|cnt_val[1]        ; core:core_inst|counter:rand_color_count_inst|cnt_val[1]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|state[1]                                        ; core:core_inst|state[1]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[0]              ; core:core_inst|counter:time_count_inst|cnt_val[0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[1]              ; core:core_inst|counter:time_count_inst|cnt_val[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[2]              ; core:core_inst|counter:time_count_inst|cnt_val[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[3]              ; core:core_inst|counter:time_count_inst|cnt_val[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[4]              ; core:core_inst|counter:time_count_inst|cnt_val[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[5]              ; core:core_inst|counter:time_count_inst|cnt_val[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[6]              ; core:core_inst|counter:time_count_inst|cnt_val[6]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[7]              ; core:core_inst|counter:time_count_inst|cnt_val[7]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[8]              ; core:core_inst|counter:time_count_inst|cnt_val[8]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[9]              ; core:core_inst|counter:time_count_inst|cnt_val[9]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[10]             ; core:core_inst|counter:time_count_inst|cnt_val[10]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[11]             ; core:core_inst|counter:time_count_inst|cnt_val[11]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[12]             ; core:core_inst|counter:time_count_inst|cnt_val[12]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[13]             ; core:core_inst|counter:time_count_inst|cnt_val[13]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[14]             ; core:core_inst|counter:time_count_inst|cnt_val[14]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[15]             ; core:core_inst|counter:time_count_inst|cnt_val[15]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[16]             ; core:core_inst|counter:time_count_inst|cnt_val[16]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[17]             ; core:core_inst|counter:time_count_inst|cnt_val[17]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[18]             ; core:core_inst|counter:time_count_inst|cnt_val[18]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[19]             ; core:core_inst|counter:time_count_inst|cnt_val[19]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[20]             ; core:core_inst|counter:time_count_inst|cnt_val[20]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[21]             ; core:core_inst|counter:time_count_inst|cnt_val[21]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[22]             ; core:core_inst|counter:time_count_inst|cnt_val[22]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[23]             ; core:core_inst|counter:time_count_inst|cnt_val[23]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[24]             ; core:core_inst|counter:time_count_inst|cnt_val[24]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[25]             ; core:core_inst|counter:time_count_inst|cnt_val[25]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[26]             ; core:core_inst|counter:time_count_inst|cnt_val[26]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[27]             ; core:core_inst|counter:time_count_inst|cnt_val[27]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[28]             ; core:core_inst|counter:time_count_inst|cnt_val[28]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[29]             ; core:core_inst|counter:time_count_inst|cnt_val[29]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[30]             ; core:core_inst|counter:time_count_inst|cnt_val[30]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; core:core_inst|counter:time_count_inst|cnt_val[31]             ; core:core_inst|counter:time_count_inst|cnt_val[31]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.612 ; ps2:ps2_inst|ps2_data_r[0]                                     ; ps2:ps2_inst|ps2_data_r[1]                                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.898      ;
+; 0.621 ; ps2:ps2_inst|key_reg[9]                                        ; ps2:ps2_inst|key_reg[8]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.907      ;
+; 0.621 ; ps2:ps2_inst|key_reg[6]                                        ; ps2:ps2_inst|key_reg[5]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.907      ;
+; 0.622 ; ps2:ps2_inst|key_reg[5]                                        ; ps2:ps2_inst|key_reg[4]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.908      ;
+; 0.625 ; ps2:ps2_inst|key_reg[4]                                        ; ps2:ps2_inst|key_reg[3]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.911      ;
+; 0.626 ; ps2:ps2_inst|key_reg[3]                                        ; ps2:ps2_inst|key_reg[2]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.912      ;
+; 0.628 ; ps2:ps2_inst|key_reg[7]                                        ; ps2:ps2_inst|key_reg[6]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.914      ;
+; 0.629 ; core:core_inst|counter:time_count_color_blink_inst|cnt_val[31] ; core:core_inst|counter:time_count_color_blink_inst|cnt_val[31] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.915      ;
+; 0.629 ; core:core_inst|counter:seq_count_inst|cnt_val[31]              ; core:core_inst|counter:seq_count_inst|cnt_val[31]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.915      ;
+; 0.630 ; ps2:ps2_inst|key_seq3[0]                                       ; ps2:ps2_inst|key_seq3[1]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.916      ;
+; 0.632 ; core:core_inst|counter:rand_color_count_inst|cnt_val[0]        ; core:core_inst|memory[190][0]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.918      ;
+; 0.632 ; ps2:ps2_inst|key_seq3[1]                                       ; ps2:ps2_inst|btn_pulse                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.918      ;
+; 0.632 ; core:core_inst|counter:rand_color_count_inst|cnt_val[0]        ; core:core_inst|counter:rand_color_count_inst|cnt_val[1]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.918      ;
+; 0.634 ; ps2:ps2_inst|key_seq3[1]                                       ; ps2:ps2_inst|key_seq3[0]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.920      ;
+; 0.639 ; vga:vga_inst|x[9]                                              ; vga:vga_inst|x[9]                                              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.925      ;
+; 0.645 ; core:core_inst|counter:round_count_inst|cnt_val[7]             ; core:core_inst|counter:round_count_inst|cnt_val[7]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.931      ;
+; 0.645 ; vga:vga_inst|y[9]                                              ; vga:vga_inst|y[9]                                              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.931      ;
+; 0.646 ; core:core_inst|counter:player_round_count_inst|cnt_val[7]      ; core:core_inst|counter:player_round_count_inst|cnt_val[7]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.932      ;
+; 0.766 ; ps2:ps2_inst|key_reg[10]                                       ; ps2:ps2_inst|key_reg[9]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.052      ;
+; 0.768 ; core:core_inst|counter:rand_color_count_inst|cnt_val[1]        ; core:core_inst|memory[190][1]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.054      ;
+; 0.771 ; ps2:ps2_inst|key_reg[8]                                        ; ps2:ps2_inst|key_reg[7]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.057      ;
+; 0.776 ; ps2:ps2_inst|key_reg[1]                                        ; ps2:ps2_inst|btn_code[0]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 1.062      ;
+; 0.790 ; ps2:ps2_inst|ps2_clk_r[0]                                      ; ps2:ps2_inst|ps2_clk_r[1]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 1.076      ;
+; 0.851 ; ps2:ps2_inst|ps2_data_r[1]                                     ; ps2:ps2_inst|key_reg[10]                                       ; clk          ; clk         ; 0.000        ; -0.001     ; 1.136      ;
+; 0.968 ; core:core_inst|counter:time_count_color_blink_inst|cnt_val[0]  ; core:core_inst|counter:time_count_color_blink_inst|cnt_val[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.254      ;
+; 0.968 ; core:core_inst|counter:time_count_color_blink_inst|cnt_val[16] ; core:core_inst|counter:time_count_color_blink_inst|cnt_val[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.254      ;
+; 0.968 ; core:core_inst|counter:seq_count_inst|cnt_val[16]              ; core:core_inst|counter:seq_count_inst|cnt_val[16]              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.254      ;
+; 0.968 ; core:core_inst|counter:seq_count_inst|cnt_val[0]               ; core:core_inst|counter:seq_count_inst|cnt_val[0]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.254      ;
++-------+----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                    ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clk   ; Rise       ; clk                                                       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|blink_btn[0]                               ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|blink_btn[0]                               ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|blink_btn[1]                               ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|blink_btn[1]                               ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|blink_en                                   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|blink_en                                   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:rand_color_count_inst|cnt_val[0]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:rand_color_count_inst|cnt_val[0]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:rand_color_count_inst|cnt_val[1]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:rand_color_count_inst|cnt_val[1]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[0]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[0]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[1]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[1]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[2]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[2]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[3]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[3]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[4]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[4]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[5]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[5]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[6]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[6]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[7]        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[7]        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[0]          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[0]          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[10]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[10]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[11]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[11]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[12]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[12]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[13]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[13]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[14]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[14]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[15]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[15]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[16]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[16]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[17]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[17]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[18]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[18]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[19]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[19]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[1]          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[1]          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[20]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[20]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[21]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[21]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[22]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[22]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[23]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[23]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[24]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[24]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[25]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[25]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[26]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[26]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[27]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[27]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[28]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[28]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[29]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[29]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[2]          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[2]          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[30]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[30]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[31]         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[31]         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[3]          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[3]          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[4]          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[4]          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[5]          ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[5]          ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[6]          ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; ps2_clk   ; clk        ; 5.021 ; 5.021 ; Rise       ; clk             ;
+; ps2_data  ; clk        ; 4.669 ; 4.669 ; Rise       ; clk             ;
+; rst       ; clk        ; 2.578 ; 2.578 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; ps2_clk   ; clk        ; -4.773 ; -4.773 ; Rise       ; clk             ;
+; ps2_data  ; clk        ; -4.421 ; -4.421 ; Rise       ; clk             ;
+; rst       ; clk        ; -1.082 ; -1.082 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; blue[*]   ; clk        ; 11.906 ; 11.906 ; Rise       ; clk             ;
+;  blue[0]  ; clk        ; 11.333 ; 11.333 ; Rise       ; clk             ;
+;  blue[1]  ; clk        ; 11.891 ; 11.891 ; Rise       ; clk             ;
+;  blue[2]  ; clk        ; 11.906 ; 11.906 ; Rise       ; clk             ;
+;  blue[3]  ; clk        ; 11.866 ; 11.866 ; Rise       ; clk             ;
+; green[*]  ; clk        ; 23.186 ; 23.186 ; Rise       ; clk             ;
+;  green[0] ; clk        ; 23.175 ; 23.175 ; Rise       ; clk             ;
+;  green[1] ; clk        ; 23.186 ; 23.186 ; Rise       ; clk             ;
+;  green[2] ; clk        ; 22.854 ; 22.854 ; Rise       ; clk             ;
+;  green[3] ; clk        ; 23.175 ; 23.175 ; Rise       ; clk             ;
+; hex0[*]   ; clk        ; 23.556 ; 23.556 ; Rise       ; clk             ;
+;  hex0[0]  ; clk        ; 23.522 ; 23.522 ; Rise       ; clk             ;
+;  hex0[1]  ; clk        ; 10.049 ; 10.049 ; Rise       ; clk             ;
+;  hex0[2]  ; clk        ; 23.556 ; 23.556 ; Rise       ; clk             ;
+;  hex0[3]  ; clk        ; 23.542 ; 23.542 ; Rise       ; clk             ;
+;  hex0[4]  ; clk        ; 23.511 ; 23.511 ; Rise       ; clk             ;
+;  hex0[5]  ; clk        ; 23.213 ; 23.213 ; Rise       ; clk             ;
+;  hex0[6]  ; clk        ; 23.194 ; 23.194 ; Rise       ; clk             ;
+; hex1[*]   ; clk        ; 10.150 ; 10.150 ; Rise       ; clk             ;
+;  hex1[0]  ; clk        ; 10.087 ; 10.087 ; Rise       ; clk             ;
+;  hex1[1]  ; clk        ; 10.072 ; 10.072 ; Rise       ; clk             ;
+;  hex1[2]  ; clk        ; 10.027 ; 10.027 ; Rise       ; clk             ;
+;  hex1[3]  ; clk        ; 10.085 ; 10.085 ; Rise       ; clk             ;
+;  hex1[4]  ; clk        ; 10.150 ; 10.150 ; Rise       ; clk             ;
+;  hex1[5]  ; clk        ; 10.090 ; 10.090 ; Rise       ; clk             ;
+;  hex1[6]  ; clk        ; 10.113 ; 10.113 ; Rise       ; clk             ;
+; hex2[*]   ; clk        ; 9.651  ; 9.651  ; Rise       ; clk             ;
+;  hex2[0]  ; clk        ; 9.568  ; 9.568  ; Rise       ; clk             ;
+;  hex2[1]  ; clk        ; 8.841  ; 8.841  ; Rise       ; clk             ;
+;  hex2[2]  ; clk        ; 8.901  ; 8.901  ; Rise       ; clk             ;
+;  hex2[3]  ; clk        ; 9.651  ; 9.651  ; Rise       ; clk             ;
+;  hex2[4]  ; clk        ; 8.856  ; 8.856  ; Rise       ; clk             ;
+;  hex2[5]  ; clk        ; 8.864  ; 8.864  ; Rise       ; clk             ;
+;  hex2[6]  ; clk        ; 9.212  ; 9.212  ; Rise       ; clk             ;
+; hex3[*]   ; clk        ; 9.385  ; 9.385  ; Rise       ; clk             ;
+;  hex3[0]  ; clk        ; 8.828  ; 8.828  ; Rise       ; clk             ;
+;  hex3[1]  ; clk        ; 9.385  ; 9.385  ; Rise       ; clk             ;
+;  hex3[2]  ; clk        ; 9.371  ; 9.371  ; Rise       ; clk             ;
+;  hex3[3]  ; clk        ; 8.584  ; 8.584  ; Rise       ; clk             ;
+;  hex3[4]  ; clk        ; 8.581  ; 8.581  ; Rise       ; clk             ;
+;  hex3[5]  ; clk        ; 8.837  ; 8.837  ; Rise       ; clk             ;
+;  hex3[6]  ; clk        ; 9.207  ; 9.207  ; Rise       ; clk             ;
+; hsync     ; clk        ; 9.708  ; 9.708  ; Rise       ; clk             ;
+; red[*]    ; clk        ; 23.145 ; 23.145 ; Rise       ; clk             ;
+;  red[0]   ; clk        ; 22.934 ; 22.934 ; Rise       ; clk             ;
+;  red[1]   ; clk        ; 23.121 ; 23.121 ; Rise       ; clk             ;
+;  red[2]   ; clk        ; 23.145 ; 23.145 ; Rise       ; clk             ;
+;  red[3]   ; clk        ; 23.115 ; 23.115 ; Rise       ; clk             ;
+; vsync     ; clk        ; 10.010 ; 10.010 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; blue[*]   ; clk        ; 9.011  ; 9.011  ; Rise       ; clk             ;
+;  blue[0]  ; clk        ; 9.011  ; 9.011  ; Rise       ; clk             ;
+;  blue[1]  ; clk        ; 9.569  ; 9.569  ; Rise       ; clk             ;
+;  blue[2]  ; clk        ; 9.584  ; 9.584  ; Rise       ; clk             ;
+;  blue[3]  ; clk        ; 9.544  ; 9.544  ; Rise       ; clk             ;
+; green[*]  ; clk        ; 9.661  ; 9.661  ; Rise       ; clk             ;
+;  green[0] ; clk        ; 9.982  ; 9.982  ; Rise       ; clk             ;
+;  green[1] ; clk        ; 9.993  ; 9.993  ; Rise       ; clk             ;
+;  green[2] ; clk        ; 9.661  ; 9.661  ; Rise       ; clk             ;
+;  green[3] ; clk        ; 9.982  ; 9.982  ; Rise       ; clk             ;
+; hex0[*]   ; clk        ; 8.261  ; 8.261  ; Rise       ; clk             ;
+;  hex0[0]  ; clk        ; 10.285 ; 10.285 ; Rise       ; clk             ;
+;  hex0[1]  ; clk        ; 8.507  ; 8.507  ; Rise       ; clk             ;
+;  hex0[2]  ; clk        ; 10.363 ; 10.363 ; Rise       ; clk             ;
+;  hex0[3]  ; clk        ; 10.305 ; 10.305 ; Rise       ; clk             ;
+;  hex0[4]  ; clk        ; 8.261  ; 8.261  ; Rise       ; clk             ;
+;  hex0[5]  ; clk        ; 9.077  ; 9.077  ; Rise       ; clk             ;
+;  hex0[6]  ; clk        ; 9.071  ; 9.071  ; Rise       ; clk             ;
+; hex1[*]   ; clk        ; 9.758  ; 9.758  ; Rise       ; clk             ;
+;  hex1[0]  ; clk        ; 9.801  ; 9.801  ; Rise       ; clk             ;
+;  hex1[1]  ; clk        ; 9.778  ; 9.778  ; Rise       ; clk             ;
+;  hex1[2]  ; clk        ; 9.758  ; 9.758  ; Rise       ; clk             ;
+;  hex1[3]  ; clk        ; 9.794  ; 9.794  ; Rise       ; clk             ;
+;  hex1[4]  ; clk        ; 9.861  ; 9.861  ; Rise       ; clk             ;
+;  hex1[5]  ; clk        ; 9.799  ; 9.799  ; Rise       ; clk             ;
+;  hex1[6]  ; clk        ; 9.821  ; 9.821  ; Rise       ; clk             ;
+; hex2[*]   ; clk        ; 7.995  ; 7.995  ; Rise       ; clk             ;
+;  hex2[0]  ; clk        ; 9.012  ; 9.012  ; Rise       ; clk             ;
+;  hex2[1]  ; clk        ; 7.995  ; 7.995  ; Rise       ; clk             ;
+;  hex2[2]  ; clk        ; 8.646  ; 8.646  ; Rise       ; clk             ;
+;  hex2[3]  ; clk        ; 9.059  ; 9.059  ; Rise       ; clk             ;
+;  hex2[4]  ; clk        ; 8.599  ; 8.599  ; Rise       ; clk             ;
+;  hex2[5]  ; clk        ; 8.603  ; 8.603  ; Rise       ; clk             ;
+;  hex2[6]  ; clk        ; 8.364  ; 8.364  ; Rise       ; clk             ;
+; hex3[*]   ; clk        ; 7.985  ; 7.985  ; Rise       ; clk             ;
+;  hex3[0]  ; clk        ; 8.428  ; 8.428  ; Rise       ; clk             ;
+;  hex3[1]  ; clk        ; 8.984  ; 8.984  ; Rise       ; clk             ;
+;  hex3[2]  ; clk        ; 8.972  ; 8.972  ; Rise       ; clk             ;
+;  hex3[3]  ; clk        ; 7.985  ; 7.985  ; Rise       ; clk             ;
+;  hex3[4]  ; clk        ; 7.985  ; 7.985  ; Rise       ; clk             ;
+;  hex3[5]  ; clk        ; 8.438  ; 8.438  ; Rise       ; clk             ;
+;  hex3[6]  ; clk        ; 8.805  ; 8.805  ; Rise       ; clk             ;
+; hsync     ; clk        ; 8.384  ; 8.384  ; Rise       ; clk             ;
+; red[*]    ; clk        ; 9.870  ; 9.870  ; Rise       ; clk             ;
+;  red[0]   ; clk        ; 9.870  ; 9.870  ; Rise       ; clk             ;
+;  red[1]   ; clk        ; 10.057 ; 10.057 ; Rise       ; clk             ;
+;  red[2]   ; clk        ; 10.081 ; 10.081 ; Rise       ; clk             ;
+;  red[3]   ; clk        ; 10.051 ; 10.051 ; Rise       ; clk             ;
+; vsync     ; clk        ; 8.824  ; 8.824  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -2.409 ; -858.884      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -700.380              ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                                                              ;
++--------+-----------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                 ; To Node                                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.409 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.441      ;
+; -2.409 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.441      ;
+; -2.409 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.441      ;
+; -2.409 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.441      ;
+; -2.409 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.441      ;
+; -2.409 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.441      ;
+; -2.409 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.441      ;
+; -2.409 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.441      ;
+; -2.406 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.438      ;
+; -2.406 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.438      ;
+; -2.406 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.438      ;
+; -2.406 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.438      ;
+; -2.406 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.438      ;
+; -2.406 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.438      ;
+; -2.406 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.438      ;
+; -2.406 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.438      ;
+; -2.380 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.412      ;
+; -2.380 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.412      ;
+; -2.380 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.412      ;
+; -2.380 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.412      ;
+; -2.380 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.412      ;
+; -2.380 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.412      ;
+; -2.380 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.412      ;
+; -2.380 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.412      ;
+; -2.359 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.391      ;
+; -2.359 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.391      ;
+; -2.359 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.391      ;
+; -2.359 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.391      ;
+; -2.359 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.391      ;
+; -2.359 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.391      ;
+; -2.359 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.391      ;
+; -2.359 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.391      ;
+; -2.329 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|state[1]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 3.361      ;
+; -2.328 ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; core:core_inst|state[0]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 3.360      ;
+; -2.326 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|state[1]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 3.358      ;
+; -2.325 ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; core:core_inst|state[0]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 3.357      ;
+; -2.324 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.356      ;
+; -2.324 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.356      ;
+; -2.324 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.356      ;
+; -2.324 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.356      ;
+; -2.324 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.356      ;
+; -2.324 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.356      ;
+; -2.324 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.356      ;
+; -2.324 ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.356      ;
+; -2.300 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|state[1]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 3.332      ;
+; -2.299 ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; core:core_inst|state[0]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 3.331      ;
+; -2.295 ; core:core_inst|memory[167][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.329      ;
+; -2.295 ; core:core_inst|memory[167][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.329      ;
+; -2.295 ; core:core_inst|memory[167][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.329      ;
+; -2.295 ; core:core_inst|memory[167][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.329      ;
+; -2.295 ; core:core_inst|memory[167][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.329      ;
+; -2.295 ; core:core_inst|memory[167][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.329      ;
+; -2.295 ; core:core_inst|memory[167][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.329      ;
+; -2.295 ; core:core_inst|memory[167][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.002      ; 3.329      ;
+; -2.283 ; core:core_inst|memory[139][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.010      ; 3.325      ;
+; -2.283 ; core:core_inst|memory[139][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.010      ; 3.325      ;
+; -2.283 ; core:core_inst|memory[139][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.010      ; 3.325      ;
+; -2.283 ; core:core_inst|memory[139][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.010      ; 3.325      ;
+; -2.283 ; core:core_inst|memory[139][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.010      ; 3.325      ;
+; -2.283 ; core:core_inst|memory[139][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.010      ; 3.325      ;
+; -2.283 ; core:core_inst|memory[139][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.010      ; 3.325      ;
+; -2.283 ; core:core_inst|memory[139][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.010      ; 3.325      ;
+; -2.279 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|state[1]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 3.311      ;
+; -2.278 ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; core:core_inst|state[0]                                   ; clk          ; clk         ; 1.000        ; 0.000      ; 3.310      ;
+; -2.276 ; core:core_inst|memory[25][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.308      ;
+; -2.276 ; core:core_inst|memory[25][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.308      ;
+; -2.276 ; core:core_inst|memory[25][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.308      ;
+; -2.276 ; core:core_inst|memory[25][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.308      ;
+; -2.276 ; core:core_inst|memory[25][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.308      ;
+; -2.276 ; core:core_inst|memory[25][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.308      ;
+; -2.276 ; core:core_inst|memory[25][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.308      ;
+; -2.276 ; core:core_inst|memory[25][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.308      ;
+; -2.266 ; core:core_inst|memory[130][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; -0.001     ; 3.297      ;
+; -2.266 ; core:core_inst|memory[130][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; -0.001     ; 3.297      ;
+; -2.266 ; core:core_inst|memory[130][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; -0.001     ; 3.297      ;
+; -2.266 ; core:core_inst|memory[130][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; -0.001     ; 3.297      ;
+; -2.266 ; core:core_inst|memory[130][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; -0.001     ; 3.297      ;
+; -2.266 ; core:core_inst|memory[130][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; -0.001     ; 3.297      ;
+; -2.266 ; core:core_inst|memory[130][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; -0.001     ; 3.297      ;
+; -2.266 ; core:core_inst|memory[130][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; -0.001     ; 3.297      ;
+; -2.253 ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.285      ;
+; -2.253 ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.285      ;
+; -2.253 ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.285      ;
+; -2.253 ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.285      ;
+; -2.253 ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.285      ;
+; -2.253 ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.285      ;
+; -2.253 ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.285      ;
+; -2.253 ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.285      ;
+; -2.249 ; core:core_inst|memory[162][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.006      ; 3.287      ;
+; -2.249 ; core:core_inst|memory[162][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.006      ; 3.287      ;
+; -2.249 ; core:core_inst|memory[162][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.006      ; 3.287      ;
+; -2.249 ; core:core_inst|memory[162][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.006      ; 3.287      ;
+; -2.249 ; core:core_inst|memory[162][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ; clk          ; clk         ; 1.000        ; 0.006      ; 3.287      ;
+; -2.249 ; core:core_inst|memory[162][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ; clk          ; clk         ; 1.000        ; 0.006      ; 3.287      ;
+; -2.249 ; core:core_inst|memory[162][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ; clk          ; clk         ; 1.000        ; 0.006      ; 3.287      ;
+; -2.249 ; core:core_inst|memory[162][0]                             ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ; clk          ; clk         ; 1.000        ; 0.006      ; 3.287      ;
+; -2.249 ; core:core_inst|memory[19][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ; clk          ; clk         ; 1.000        ; 0.010      ; 3.291      ;
+; -2.249 ; core:core_inst|memory[19][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ; clk          ; clk         ; 1.000        ; 0.010      ; 3.291      ;
+; -2.249 ; core:core_inst|memory[19][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ; clk          ; clk         ; 1.000        ; 0.010      ; 3.291      ;
+; -2.249 ; core:core_inst|memory[19][1]                              ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ; clk          ; clk         ; 1.000        ; 0.010      ; 3.291      ;
++--------+-----------------------------------------------------------+-----------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                                                        ;
++-------+----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                      ; To Node                                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; core:core_inst|counter:rand_color_count_inst|cnt_val[0]        ; core:core_inst|counter:rand_color_count_inst|cnt_val[0]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[0]                          ; ps2:ps2_inst|counter:count|cnt_val[0]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[1]                          ; ps2:ps2_inst|counter:count|cnt_val[1]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[2]                          ; ps2:ps2_inst|counter:count|cnt_val[2]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[3]                          ; ps2:ps2_inst|counter:count|cnt_val[3]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[4]                          ; ps2:ps2_inst|counter:count|cnt_val[4]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[5]                          ; ps2:ps2_inst|counter:count|cnt_val[5]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[6]                          ; ps2:ps2_inst|counter:count|cnt_val[6]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[7]                          ; ps2:ps2_inst|counter:count|cnt_val[7]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[8]                          ; ps2:ps2_inst|counter:count|cnt_val[8]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[9]                          ; ps2:ps2_inst|counter:count|cnt_val[9]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[10]                         ; ps2:ps2_inst|counter:count|cnt_val[10]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[11]                         ; ps2:ps2_inst|counter:count|cnt_val[11]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[12]                         ; ps2:ps2_inst|counter:count|cnt_val[12]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[13]                         ; ps2:ps2_inst|counter:count|cnt_val[13]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[14]                         ; ps2:ps2_inst|counter:count|cnt_val[14]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[15]                         ; ps2:ps2_inst|counter:count|cnt_val[15]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[16]                         ; ps2:ps2_inst|counter:count|cnt_val[16]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[17]                         ; ps2:ps2_inst|counter:count|cnt_val[17]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[18]                         ; ps2:ps2_inst|counter:count|cnt_val[18]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[19]                         ; ps2:ps2_inst|counter:count|cnt_val[19]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[20]                         ; ps2:ps2_inst|counter:count|cnt_val[20]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[21]                         ; ps2:ps2_inst|counter:count|cnt_val[21]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[22]                         ; ps2:ps2_inst|counter:count|cnt_val[22]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[23]                         ; ps2:ps2_inst|counter:count|cnt_val[23]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[24]                         ; ps2:ps2_inst|counter:count|cnt_val[24]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[25]                         ; ps2:ps2_inst|counter:count|cnt_val[25]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[26]                         ; ps2:ps2_inst|counter:count|cnt_val[26]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[27]                         ; ps2:ps2_inst|counter:count|cnt_val[27]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[28]                         ; ps2:ps2_inst|counter:count|cnt_val[28]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[29]                         ; ps2:ps2_inst|counter:count|cnt_val[29]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[30]                         ; ps2:ps2_inst|counter:count|cnt_val[30]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|counter:count|cnt_val[31]                         ; ps2:ps2_inst|counter:count|cnt_val[31]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|key_seq3[0]                                       ; ps2:ps2_inst|key_seq3[0]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|key_seq3[1]                                       ; ps2:ps2_inst|key_seq3[1]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ps2:ps2_inst|btn_pulse                                         ; ps2:ps2_inst|btn_pulse                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|state[0]                                        ; core:core_inst|state[0]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|blink_en                                        ; core:core_inst|blink_en                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:rand_color_count_inst|cnt_val[1]        ; core:core_inst|counter:rand_color_count_inst|cnt_val[1]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|state[1]                                        ; core:core_inst|state[1]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[0]              ; core:core_inst|counter:time_count_inst|cnt_val[0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[1]              ; core:core_inst|counter:time_count_inst|cnt_val[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[2]              ; core:core_inst|counter:time_count_inst|cnt_val[2]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[3]              ; core:core_inst|counter:time_count_inst|cnt_val[3]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[4]              ; core:core_inst|counter:time_count_inst|cnt_val[4]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[5]              ; core:core_inst|counter:time_count_inst|cnt_val[5]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[6]              ; core:core_inst|counter:time_count_inst|cnt_val[6]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[7]              ; core:core_inst|counter:time_count_inst|cnt_val[7]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[8]              ; core:core_inst|counter:time_count_inst|cnt_val[8]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[9]              ; core:core_inst|counter:time_count_inst|cnt_val[9]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[10]             ; core:core_inst|counter:time_count_inst|cnt_val[10]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[11]             ; core:core_inst|counter:time_count_inst|cnt_val[11]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[12]             ; core:core_inst|counter:time_count_inst|cnt_val[12]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[13]             ; core:core_inst|counter:time_count_inst|cnt_val[13]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[14]             ; core:core_inst|counter:time_count_inst|cnt_val[14]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[15]             ; core:core_inst|counter:time_count_inst|cnt_val[15]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[16]             ; core:core_inst|counter:time_count_inst|cnt_val[16]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[17]             ; core:core_inst|counter:time_count_inst|cnt_val[17]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[18]             ; core:core_inst|counter:time_count_inst|cnt_val[18]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[19]             ; core:core_inst|counter:time_count_inst|cnt_val[19]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[20]             ; core:core_inst|counter:time_count_inst|cnt_val[20]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[21]             ; core:core_inst|counter:time_count_inst|cnt_val[21]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[22]             ; core:core_inst|counter:time_count_inst|cnt_val[22]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[23]             ; core:core_inst|counter:time_count_inst|cnt_val[23]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[24]             ; core:core_inst|counter:time_count_inst|cnt_val[24]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[25]             ; core:core_inst|counter:time_count_inst|cnt_val[25]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[26]             ; core:core_inst|counter:time_count_inst|cnt_val[26]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[27]             ; core:core_inst|counter:time_count_inst|cnt_val[27]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[28]             ; core:core_inst|counter:time_count_inst|cnt_val[28]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[29]             ; core:core_inst|counter:time_count_inst|cnt_val[29]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[30]             ; core:core_inst|counter:time_count_inst|cnt_val[30]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; core:core_inst|counter:time_count_inst|cnt_val[31]             ; core:core_inst|counter:time_count_inst|cnt_val[31]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.236 ; ps2:ps2_inst|ps2_data_r[0]                                     ; ps2:ps2_inst|ps2_data_r[1]                                     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.388      ;
+; 0.239 ; ps2:ps2_inst|key_reg[6]                                        ; ps2:ps2_inst|key_reg[5]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.391      ;
+; 0.240 ; ps2:ps2_inst|key_reg[5]                                        ; ps2:ps2_inst|key_reg[4]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; ps2:ps2_inst|key_reg[4]                                        ; ps2:ps2_inst|key_reg[3]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.241 ; ps2:ps2_inst|key_reg[3]                                        ; ps2:ps2_inst|key_reg[2]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.242 ; ps2:ps2_inst|key_reg[9]                                        ; ps2:ps2_inst|key_reg[8]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.243 ; ps2:ps2_inst|key_reg[7]                                        ; ps2:ps2_inst|key_reg[6]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; core:core_inst|counter:time_count_color_blink_inst|cnt_val[31] ; core:core_inst|counter:time_count_color_blink_inst|cnt_val[31] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; core:core_inst|counter:seq_count_inst|cnt_val[31]              ; core:core_inst|counter:seq_count_inst|cnt_val[31]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.245 ; core:core_inst|counter:rand_color_count_inst|cnt_val[0]        ; core:core_inst|memory[190][0]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.397      ;
+; 0.246 ; core:core_inst|counter:rand_color_count_inst|cnt_val[0]        ; core:core_inst|counter:rand_color_count_inst|cnt_val[1]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.398      ;
+; 0.247 ; ps2:ps2_inst|key_seq3[0]                                       ; ps2:ps2_inst|key_seq3[1]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.399      ;
+; 0.247 ; ps2:ps2_inst|key_seq3[1]                                       ; ps2:ps2_inst|btn_pulse                                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.399      ;
+; 0.248 ; vga:vga_inst|x[9]                                              ; vga:vga_inst|x[9]                                              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.400      ;
+; 0.249 ; core:core_inst|counter:round_count_inst|cnt_val[7]             ; core:core_inst|counter:round_count_inst|cnt_val[7]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.401      ;
+; 0.249 ; ps2:ps2_inst|key_seq3[1]                                       ; ps2:ps2_inst|key_seq3[0]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.401      ;
+; 0.252 ; core:core_inst|counter:player_round_count_inst|cnt_val[7]      ; core:core_inst|counter:player_round_count_inst|cnt_val[7]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.404      ;
+; 0.252 ; vga:vga_inst|y[9]                                              ; vga:vga_inst|y[9]                                              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.404      ;
+; 0.322 ; ps2:ps2_inst|ps2_data_r[1]                                     ; ps2:ps2_inst|key_reg[10]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.474      ;
+; 0.325 ; core:core_inst|counter:rand_color_count_inst|cnt_val[1]        ; core:core_inst|memory[190][1]                                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.477      ;
+; 0.326 ; ps2:ps2_inst|key_reg[8]                                        ; ps2:ps2_inst|key_reg[7]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.478      ;
+; 0.327 ; ps2:ps2_inst|key_reg[10]                                       ; ps2:ps2_inst|key_reg[9]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.479      ;
+; 0.331 ; ps2:ps2_inst|key_reg[1]                                        ; ps2:ps2_inst|btn_code[0]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.483      ;
+; 0.338 ; ps2:ps2_inst|ps2_clk_r[0]                                      ; ps2:ps2_inst|ps2_clk_r[1]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.490      ;
+; 0.355 ; core:core_inst|counter:time_count_color_blink_inst|cnt_val[16] ; core:core_inst|counter:time_count_color_blink_inst|cnt_val[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; core:core_inst|counter:seq_count_inst|cnt_val[16]              ; core:core_inst|counter:seq_count_inst|cnt_val[16]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; core:core_inst|counter:seq_count_inst|cnt_val[0]               ; core:core_inst|counter:seq_count_inst|cnt_val[0]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.358 ; core:core_inst|counter:time_count_color_blink_inst|cnt_val[0]  ; core:core_inst|counter:time_count_color_blink_inst|cnt_val[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
++-------+----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                    ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|blink_btn[0]                               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|blink_btn[0]                               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|blink_btn[1]                               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|blink_btn[1]                               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|blink_en                                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|blink_en                                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:player_round_count_inst|cnt_val[7] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:rand_color_count_inst|cnt_val[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:rand_color_count_inst|cnt_val[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:rand_color_count_inst|cnt_val[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:rand_color_count_inst|cnt_val[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:round_count_inst|cnt_val[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[0]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[0]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[10]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[10]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[11]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[11]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[12]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[12]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[13]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[13]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[14]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[14]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[15]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[15]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[16]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[16]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[17]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[17]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[18]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[18]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[19]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[19]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[1]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[1]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[20]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[20]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[21]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[21]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[22]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[22]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[23]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[23]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[24]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[24]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[25]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[25]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[26]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[26]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[27]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[27]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[28]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[28]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[29]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[29]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[2]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[2]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[30]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[30]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[31]         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[31]         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[3]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[3]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[4]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[4]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[5]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[5]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; core:core_inst|counter:seq_count_inst|cnt_val[6]          ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; ps2_clk   ; clk        ; 2.293 ; 2.293 ; Rise       ; clk             ;
+; ps2_data  ; clk        ; 2.099 ; 2.099 ; Rise       ; clk             ;
+; rst       ; clk        ; 0.597 ; 0.597 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; ps2_clk   ; clk        ; -2.173 ; -2.173 ; Rise       ; clk             ;
+; ps2_data  ; clk        ; -1.979 ; -1.979 ; Rise       ; clk             ;
+; rst       ; clk        ; 0.046  ; 0.046  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; blue[*]   ; clk        ; 5.708 ; 5.708 ; Rise       ; clk             ;
+;  blue[0]  ; clk        ; 5.489 ; 5.489 ; Rise       ; clk             ;
+;  blue[1]  ; clk        ; 5.692 ; 5.692 ; Rise       ; clk             ;
+;  blue[2]  ; clk        ; 5.708 ; 5.708 ; Rise       ; clk             ;
+;  blue[3]  ; clk        ; 5.668 ; 5.668 ; Rise       ; clk             ;
+; green[*]  ; clk        ; 9.865 ; 9.865 ; Rise       ; clk             ;
+;  green[0] ; clk        ; 9.861 ; 9.861 ; Rise       ; clk             ;
+;  green[1] ; clk        ; 9.865 ; 9.865 ; Rise       ; clk             ;
+;  green[2] ; clk        ; 9.734 ; 9.734 ; Rise       ; clk             ;
+;  green[3] ; clk        ; 9.861 ; 9.861 ; Rise       ; clk             ;
+; hex0[*]   ; clk        ; 9.970 ; 9.970 ; Rise       ; clk             ;
+;  hex0[0]  ; clk        ; 9.947 ; 9.947 ; Rise       ; clk             ;
+;  hex0[1]  ; clk        ; 4.956 ; 4.956 ; Rise       ; clk             ;
+;  hex0[2]  ; clk        ; 9.970 ; 9.970 ; Rise       ; clk             ;
+;  hex0[3]  ; clk        ; 9.968 ; 9.968 ; Rise       ; clk             ;
+;  hex0[4]  ; clk        ; 9.902 ; 9.902 ; Rise       ; clk             ;
+;  hex0[5]  ; clk        ; 9.802 ; 9.802 ; Rise       ; clk             ;
+;  hex0[6]  ; clk        ; 9.802 ; 9.802 ; Rise       ; clk             ;
+; hex1[*]   ; clk        ; 5.001 ; 5.001 ; Rise       ; clk             ;
+;  hex1[0]  ; clk        ; 4.975 ; 4.975 ; Rise       ; clk             ;
+;  hex1[1]  ; clk        ; 4.950 ; 4.950 ; Rise       ; clk             ;
+;  hex1[2]  ; clk        ; 4.937 ; 4.937 ; Rise       ; clk             ;
+;  hex1[3]  ; clk        ; 4.967 ; 4.967 ; Rise       ; clk             ;
+;  hex1[4]  ; clk        ; 5.001 ; 5.001 ; Rise       ; clk             ;
+;  hex1[5]  ; clk        ; 4.980 ; 4.980 ; Rise       ; clk             ;
+;  hex1[6]  ; clk        ; 4.991 ; 4.991 ; Rise       ; clk             ;
+; hex2[*]   ; clk        ; 4.764 ; 4.764 ; Rise       ; clk             ;
+;  hex2[0]  ; clk        ; 4.715 ; 4.715 ; Rise       ; clk             ;
+;  hex2[1]  ; clk        ; 4.437 ; 4.437 ; Rise       ; clk             ;
+;  hex2[2]  ; clk        ; 4.482 ; 4.482 ; Rise       ; clk             ;
+;  hex2[3]  ; clk        ; 4.764 ; 4.764 ; Rise       ; clk             ;
+;  hex2[4]  ; clk        ; 4.454 ; 4.454 ; Rise       ; clk             ;
+;  hex2[5]  ; clk        ; 4.452 ; 4.452 ; Rise       ; clk             ;
+;  hex2[6]  ; clk        ; 4.593 ; 4.593 ; Rise       ; clk             ;
+; hex3[*]   ; clk        ; 4.704 ; 4.704 ; Rise       ; clk             ;
+;  hex3[0]  ; clk        ; 4.414 ; 4.414 ; Rise       ; clk             ;
+;  hex3[1]  ; clk        ; 4.704 ; 4.704 ; Rise       ; clk             ;
+;  hex3[2]  ; clk        ; 4.698 ; 4.698 ; Rise       ; clk             ;
+;  hex3[3]  ; clk        ; 4.323 ; 4.323 ; Rise       ; clk             ;
+;  hex3[4]  ; clk        ; 4.311 ; 4.311 ; Rise       ; clk             ;
+;  hex3[5]  ; clk        ; 4.425 ; 4.425 ; Rise       ; clk             ;
+;  hex3[6]  ; clk        ; 4.575 ; 4.575 ; Rise       ; clk             ;
+; hsync     ; clk        ; 4.822 ; 4.822 ; Rise       ; clk             ;
+; red[*]    ; clk        ; 9.844 ; 9.844 ; Rise       ; clk             ;
+;  red[0]   ; clk        ; 9.779 ; 9.779 ; Rise       ; clk             ;
+;  red[1]   ; clk        ; 9.820 ; 9.820 ; Rise       ; clk             ;
+;  red[2]   ; clk        ; 9.844 ; 9.844 ; Rise       ; clk             ;
+;  red[3]   ; clk        ; 9.814 ; 9.814 ; Rise       ; clk             ;
+; vsync     ; clk        ; 4.917 ; 4.917 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; blue[*]   ; clk        ; 4.561 ; 4.561 ; Rise       ; clk             ;
+;  blue[0]  ; clk        ; 4.561 ; 4.561 ; Rise       ; clk             ;
+;  blue[1]  ; clk        ; 4.764 ; 4.764 ; Rise       ; clk             ;
+;  blue[2]  ; clk        ; 4.780 ; 4.780 ; Rise       ; clk             ;
+;  blue[3]  ; clk        ; 4.740 ; 4.740 ; Rise       ; clk             ;
+; green[*]  ; clk        ; 4.818 ; 4.818 ; Rise       ; clk             ;
+;  green[0] ; clk        ; 4.945 ; 4.945 ; Rise       ; clk             ;
+;  green[1] ; clk        ; 4.949 ; 4.949 ; Rise       ; clk             ;
+;  green[2] ; clk        ; 4.818 ; 4.818 ; Rise       ; clk             ;
+;  green[3] ; clk        ; 4.945 ; 4.945 ; Rise       ; clk             ;
+; hex0[*]   ; clk        ; 4.215 ; 4.215 ; Rise       ; clk             ;
+;  hex0[0]  ; clk        ; 5.004 ; 5.004 ; Rise       ; clk             ;
+;  hex0[1]  ; clk        ; 4.322 ; 4.322 ; Rise       ; clk             ;
+;  hex0[2]  ; clk        ; 5.026 ; 5.026 ; Rise       ; clk             ;
+;  hex0[3]  ; clk        ; 5.025 ; 5.025 ; Rise       ; clk             ;
+;  hex0[4]  ; clk        ; 4.215 ; 4.215 ; Rise       ; clk             ;
+;  hex0[5]  ; clk        ; 4.494 ; 4.494 ; Rise       ; clk             ;
+;  hex0[6]  ; clk        ; 4.493 ; 4.493 ; Rise       ; clk             ;
+; hex1[*]   ; clk        ; 4.818 ; 4.818 ; Rise       ; clk             ;
+;  hex1[0]  ; clk        ; 4.857 ; 4.857 ; Rise       ; clk             ;
+;  hex1[1]  ; clk        ; 4.828 ; 4.828 ; Rise       ; clk             ;
+;  hex1[2]  ; clk        ; 4.818 ; 4.818 ; Rise       ; clk             ;
+;  hex1[3]  ; clk        ; 4.842 ; 4.842 ; Rise       ; clk             ;
+;  hex1[4]  ; clk        ; 4.884 ; 4.884 ; Rise       ; clk             ;
+;  hex1[5]  ; clk        ; 4.862 ; 4.862 ; Rise       ; clk             ;
+;  hex1[6]  ; clk        ; 4.870 ; 4.870 ; Rise       ; clk             ;
+; hex2[*]   ; clk        ; 4.156 ; 4.156 ; Rise       ; clk             ;
+;  hex2[0]  ; clk        ; 4.500 ; 4.500 ; Rise       ; clk             ;
+;  hex2[1]  ; clk        ; 4.156 ; 4.156 ; Rise       ; clk             ;
+;  hex2[2]  ; clk        ; 4.383 ; 4.383 ; Rise       ; clk             ;
+;  hex2[3]  ; clk        ; 4.549 ; 4.549 ; Rise       ; clk             ;
+;  hex2[4]  ; clk        ; 4.352 ; 4.352 ; Rise       ; clk             ;
+;  hex2[5]  ; clk        ; 4.348 ; 4.348 ; Rise       ; clk             ;
+;  hex2[6]  ; clk        ; 4.314 ; 4.314 ; Rise       ; clk             ;
+; hex3[*]   ; clk        ; 4.141 ; 4.141 ; Rise       ; clk             ;
+;  hex3[0]  ; clk        ; 4.279 ; 4.279 ; Rise       ; clk             ;
+;  hex3[1]  ; clk        ; 4.566 ; 4.566 ; Rise       ; clk             ;
+;  hex3[2]  ; clk        ; 4.559 ; 4.559 ; Rise       ; clk             ;
+;  hex3[3]  ; clk        ; 4.151 ; 4.151 ; Rise       ; clk             ;
+;  hex3[4]  ; clk        ; 4.141 ; 4.141 ; Rise       ; clk             ;
+;  hex3[5]  ; clk        ; 4.288 ; 4.288 ; Rise       ; clk             ;
+;  hex3[6]  ; clk        ; 4.438 ; 4.438 ; Rise       ; clk             ;
+; hsync     ; clk        ; 4.322 ; 4.322 ; Rise       ; clk             ;
+; red[*]    ; clk        ; 4.901 ; 4.901 ; Rise       ; clk             ;
+;  red[0]   ; clk        ; 4.901 ; 4.901 ; Rise       ; clk             ;
+;  red[1]   ; clk        ; 4.942 ; 4.942 ; Rise       ; clk             ;
+;  red[2]   ; clk        ; 4.966 ; 4.966 ; Rise       ; clk             ;
+;  red[3]   ; clk        ; 4.936 ; 4.936 ; Rise       ; clk             ;
+; vsync     ; clk        ; 4.485 ; 4.485 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                             ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Clock            ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -7.889    ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+;  clk             ; -7.889    ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -3195.344 ; 0.0   ; 0.0      ; 0.0     ; -855.809            ;
+;  clk             ; -3195.344 ; 0.000 ; N/A      ; N/A     ; -855.809            ;
++------------------+-----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; ps2_clk   ; clk        ; 5.021 ; 5.021 ; Rise       ; clk             ;
+; ps2_data  ; clk        ; 4.669 ; 4.669 ; Rise       ; clk             ;
+; rst       ; clk        ; 2.578 ; 2.578 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; ps2_clk   ; clk        ; -2.173 ; -2.173 ; Rise       ; clk             ;
+; ps2_data  ; clk        ; -1.979 ; -1.979 ; Rise       ; clk             ;
+; rst       ; clk        ; 0.046  ; 0.046  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; blue[*]   ; clk        ; 11.906 ; 11.906 ; Rise       ; clk             ;
+;  blue[0]  ; clk        ; 11.333 ; 11.333 ; Rise       ; clk             ;
+;  blue[1]  ; clk        ; 11.891 ; 11.891 ; Rise       ; clk             ;
+;  blue[2]  ; clk        ; 11.906 ; 11.906 ; Rise       ; clk             ;
+;  blue[3]  ; clk        ; 11.866 ; 11.866 ; Rise       ; clk             ;
+; green[*]  ; clk        ; 23.186 ; 23.186 ; Rise       ; clk             ;
+;  green[0] ; clk        ; 23.175 ; 23.175 ; Rise       ; clk             ;
+;  green[1] ; clk        ; 23.186 ; 23.186 ; Rise       ; clk             ;
+;  green[2] ; clk        ; 22.854 ; 22.854 ; Rise       ; clk             ;
+;  green[3] ; clk        ; 23.175 ; 23.175 ; Rise       ; clk             ;
+; hex0[*]   ; clk        ; 23.556 ; 23.556 ; Rise       ; clk             ;
+;  hex0[0]  ; clk        ; 23.522 ; 23.522 ; Rise       ; clk             ;
+;  hex0[1]  ; clk        ; 10.049 ; 10.049 ; Rise       ; clk             ;
+;  hex0[2]  ; clk        ; 23.556 ; 23.556 ; Rise       ; clk             ;
+;  hex0[3]  ; clk        ; 23.542 ; 23.542 ; Rise       ; clk             ;
+;  hex0[4]  ; clk        ; 23.511 ; 23.511 ; Rise       ; clk             ;
+;  hex0[5]  ; clk        ; 23.213 ; 23.213 ; Rise       ; clk             ;
+;  hex0[6]  ; clk        ; 23.194 ; 23.194 ; Rise       ; clk             ;
+; hex1[*]   ; clk        ; 10.150 ; 10.150 ; Rise       ; clk             ;
+;  hex1[0]  ; clk        ; 10.087 ; 10.087 ; Rise       ; clk             ;
+;  hex1[1]  ; clk        ; 10.072 ; 10.072 ; Rise       ; clk             ;
+;  hex1[2]  ; clk        ; 10.027 ; 10.027 ; Rise       ; clk             ;
+;  hex1[3]  ; clk        ; 10.085 ; 10.085 ; Rise       ; clk             ;
+;  hex1[4]  ; clk        ; 10.150 ; 10.150 ; Rise       ; clk             ;
+;  hex1[5]  ; clk        ; 10.090 ; 10.090 ; Rise       ; clk             ;
+;  hex1[6]  ; clk        ; 10.113 ; 10.113 ; Rise       ; clk             ;
+; hex2[*]   ; clk        ; 9.651  ; 9.651  ; Rise       ; clk             ;
+;  hex2[0]  ; clk        ; 9.568  ; 9.568  ; Rise       ; clk             ;
+;  hex2[1]  ; clk        ; 8.841  ; 8.841  ; Rise       ; clk             ;
+;  hex2[2]  ; clk        ; 8.901  ; 8.901  ; Rise       ; clk             ;
+;  hex2[3]  ; clk        ; 9.651  ; 9.651  ; Rise       ; clk             ;
+;  hex2[4]  ; clk        ; 8.856  ; 8.856  ; Rise       ; clk             ;
+;  hex2[5]  ; clk        ; 8.864  ; 8.864  ; Rise       ; clk             ;
+;  hex2[6]  ; clk        ; 9.212  ; 9.212  ; Rise       ; clk             ;
+; hex3[*]   ; clk        ; 9.385  ; 9.385  ; Rise       ; clk             ;
+;  hex3[0]  ; clk        ; 8.828  ; 8.828  ; Rise       ; clk             ;
+;  hex3[1]  ; clk        ; 9.385  ; 9.385  ; Rise       ; clk             ;
+;  hex3[2]  ; clk        ; 9.371  ; 9.371  ; Rise       ; clk             ;
+;  hex3[3]  ; clk        ; 8.584  ; 8.584  ; Rise       ; clk             ;
+;  hex3[4]  ; clk        ; 8.581  ; 8.581  ; Rise       ; clk             ;
+;  hex3[5]  ; clk        ; 8.837  ; 8.837  ; Rise       ; clk             ;
+;  hex3[6]  ; clk        ; 9.207  ; 9.207  ; Rise       ; clk             ;
+; hsync     ; clk        ; 9.708  ; 9.708  ; Rise       ; clk             ;
+; red[*]    ; clk        ; 23.145 ; 23.145 ; Rise       ; clk             ;
+;  red[0]   ; clk        ; 22.934 ; 22.934 ; Rise       ; clk             ;
+;  red[1]   ; clk        ; 23.121 ; 23.121 ; Rise       ; clk             ;
+;  red[2]   ; clk        ; 23.145 ; 23.145 ; Rise       ; clk             ;
+;  red[3]   ; clk        ; 23.115 ; 23.115 ; Rise       ; clk             ;
+; vsync     ; clk        ; 10.010 ; 10.010 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; blue[*]   ; clk        ; 4.561 ; 4.561 ; Rise       ; clk             ;
+;  blue[0]  ; clk        ; 4.561 ; 4.561 ; Rise       ; clk             ;
+;  blue[1]  ; clk        ; 4.764 ; 4.764 ; Rise       ; clk             ;
+;  blue[2]  ; clk        ; 4.780 ; 4.780 ; Rise       ; clk             ;
+;  blue[3]  ; clk        ; 4.740 ; 4.740 ; Rise       ; clk             ;
+; green[*]  ; clk        ; 4.818 ; 4.818 ; Rise       ; clk             ;
+;  green[0] ; clk        ; 4.945 ; 4.945 ; Rise       ; clk             ;
+;  green[1] ; clk        ; 4.949 ; 4.949 ; Rise       ; clk             ;
+;  green[2] ; clk        ; 4.818 ; 4.818 ; Rise       ; clk             ;
+;  green[3] ; clk        ; 4.945 ; 4.945 ; Rise       ; clk             ;
+; hex0[*]   ; clk        ; 4.215 ; 4.215 ; Rise       ; clk             ;
+;  hex0[0]  ; clk        ; 5.004 ; 5.004 ; Rise       ; clk             ;
+;  hex0[1]  ; clk        ; 4.322 ; 4.322 ; Rise       ; clk             ;
+;  hex0[2]  ; clk        ; 5.026 ; 5.026 ; Rise       ; clk             ;
+;  hex0[3]  ; clk        ; 5.025 ; 5.025 ; Rise       ; clk             ;
+;  hex0[4]  ; clk        ; 4.215 ; 4.215 ; Rise       ; clk             ;
+;  hex0[5]  ; clk        ; 4.494 ; 4.494 ; Rise       ; clk             ;
+;  hex0[6]  ; clk        ; 4.493 ; 4.493 ; Rise       ; clk             ;
+; hex1[*]   ; clk        ; 4.818 ; 4.818 ; Rise       ; clk             ;
+;  hex1[0]  ; clk        ; 4.857 ; 4.857 ; Rise       ; clk             ;
+;  hex1[1]  ; clk        ; 4.828 ; 4.828 ; Rise       ; clk             ;
+;  hex1[2]  ; clk        ; 4.818 ; 4.818 ; Rise       ; clk             ;
+;  hex1[3]  ; clk        ; 4.842 ; 4.842 ; Rise       ; clk             ;
+;  hex1[4]  ; clk        ; 4.884 ; 4.884 ; Rise       ; clk             ;
+;  hex1[5]  ; clk        ; 4.862 ; 4.862 ; Rise       ; clk             ;
+;  hex1[6]  ; clk        ; 4.870 ; 4.870 ; Rise       ; clk             ;
+; hex2[*]   ; clk        ; 4.156 ; 4.156 ; Rise       ; clk             ;
+;  hex2[0]  ; clk        ; 4.500 ; 4.500 ; Rise       ; clk             ;
+;  hex2[1]  ; clk        ; 4.156 ; 4.156 ; Rise       ; clk             ;
+;  hex2[2]  ; clk        ; 4.383 ; 4.383 ; Rise       ; clk             ;
+;  hex2[3]  ; clk        ; 4.549 ; 4.549 ; Rise       ; clk             ;
+;  hex2[4]  ; clk        ; 4.352 ; 4.352 ; Rise       ; clk             ;
+;  hex2[5]  ; clk        ; 4.348 ; 4.348 ; Rise       ; clk             ;
+;  hex2[6]  ; clk        ; 4.314 ; 4.314 ; Rise       ; clk             ;
+; hex3[*]   ; clk        ; 4.141 ; 4.141 ; Rise       ; clk             ;
+;  hex3[0]  ; clk        ; 4.279 ; 4.279 ; Rise       ; clk             ;
+;  hex3[1]  ; clk        ; 4.566 ; 4.566 ; Rise       ; clk             ;
+;  hex3[2]  ; clk        ; 4.559 ; 4.559 ; Rise       ; clk             ;
+;  hex3[3]  ; clk        ; 4.151 ; 4.151 ; Rise       ; clk             ;
+;  hex3[4]  ; clk        ; 4.141 ; 4.141 ; Rise       ; clk             ;
+;  hex3[5]  ; clk        ; 4.288 ; 4.288 ; Rise       ; clk             ;
+;  hex3[6]  ; clk        ; 4.438 ; 4.438 ; Rise       ; clk             ;
+; hsync     ; clk        ; 4.322 ; 4.322 ; Rise       ; clk             ;
+; red[*]    ; clk        ; 4.901 ; 4.901 ; Rise       ; clk             ;
+;  red[0]   ; clk        ; 4.901 ; 4.901 ; Rise       ; clk             ;
+;  red[1]   ; clk        ; 4.942 ; 4.942 ; Rise       ; clk             ;
+;  red[2]   ; clk        ; 4.966 ; 4.966 ; Rise       ; clk             ;
+;  red[3]   ; clk        ; 4.936 ; 4.936 ; Rise       ; clk             ;
+; vsync     ; clk        ; 4.485 ; 4.485 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 33533    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 33533    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 199   ; 199  ;
+; Unconstrained Output Ports      ; 42    ; 42   ;
+; Unconstrained Output Port Paths ; 4935  ; 4935 ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed May 17 16:01:34 2017
+Info: Command: quartus_sta simon -c simon
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'simon.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -7.889
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -7.889     -3195.344 clk 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631      -855.809 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.409
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.409      -858.884 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -700.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 450 megabytes
+    Info: Processing ended: Wed May 17 16:01:38 2017
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:02
+
+

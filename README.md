@@ -1,1 +1,1 @@
-simon_says_FPGA_SystemVerilog
+Implementation of a VGA controller, a PS/2 controller and game's core logic using SystemVerilog on Altera's Cyclone FPGA
